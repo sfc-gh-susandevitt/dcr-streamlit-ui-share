@@ -1,6 +1,6 @@
 import typer
 from rich.console import Console
-from streamlit_prophet.app import deploy_streamlit
+from dcr_ui.app import deploy_streamlit
 
 app = typer.Typer()
 console = Console()
