@@ -22,7 +22,7 @@ keywords = ["snowflake","datacleanroom"]
 
 [tool.poetry.scripts]
 # Entry points for the package https://python-poetry.org/docs/pyproject/#scripts
-"dcr_ui" = "dcr_ui.cli.__main__:app"
+"streamlit_prophet" = "streamlit_prophet.cli.__main__:app"
 
 [tool.poetry.dependencies]
 python = ">=3.7 <3.10"
