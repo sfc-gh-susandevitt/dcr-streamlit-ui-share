@@ -20,7 +20,7 @@ st.set_page_config(page_title="snowdcr",page_icon="❄️")
 # Load Lib
 def get_project_root() -> str:
     return str(Path(__file__).parent)
-st.write(get_project_root()) 
+# st.write(get_project_root()) 
 
 @st.cache(ttl=300)
 def load_image(image_name: str) -> Image:
