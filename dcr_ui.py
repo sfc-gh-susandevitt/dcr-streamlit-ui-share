@@ -1,14 +1,31 @@
+
+import io
+from pathlib import Path
+
 import streamlit as st
 import snowflake.connector
 import plotly.figure_factory as ff
 import numpy as np
 import altair as alt
 import time as time
-from streamlit_prophet.lib.utils.load import load_config, load_image
+import pandas as pd
+import requests
+import toml
+from PIL import Image
 
 
 # Page config
 st.set_page_config(page_title="snowdcr",page_icon="❄️")
+
+# Load Lib
+def get_project_root() -> str:
+    return str(Path(__file__).parent)
+st.write(get_project_root()) 
+
+@st.cache(ttl=300)
+def load_image(image_name: str) -> Image:
+    return Image.open(Path(get_project_root()) / f"references/{image_name}")
+
 
 # Sidebar
 sideb = st.sidebar
