@@ -117,9 +117,9 @@ if persona == 'Consumer Request':
                   break                   
 
                #Error Check
-               errorcheck = run_query("select system$explain_plan_json("+results_query+");")                   
-               checkresults = errorcheck
-               st.write(checkresults)
+                  errorcheck = run_query("select system$explain_plan_json("+results_query+");")                   
+                  checkresults = errorcheck
+                  st.write(checkresults)
                   #if checkresults==True:
                      #with st.spinner('Result processing in progress...'):
                         #time.sleep(1)
