@@ -115,22 +115,19 @@ if persona == 'Consumer Request':
                try:
                    run_query(results_query)
                except snowflake.connector.errors.ProgrammingError as e:
-                   st.write(e)
-                   st.write('Error {0} ({1}): {2} ({3})'.format(e.errno, e.sqlstate, e.msg, e.sfqid))
+                   st.error('Error {0} ({1}): {2} ({3})'.format(e.errno, e.sqlstate, e.msg, e.sfqid))
+                   st.write("Please check the syntax of your where clause.")
 
-                
-
-
-#                while True:
-#                   results = run_query(results_query)                   
-#                   checkresults = results.empty
-#                   if checkresults==True:
-#                      with st.spinner('Result processing in progress...'):
-#                         time.sleep(1)
-#                      continue                  
-#                   st.success('Your results are ready.')
-#                   st.write(results)
-#                   break                
+               while True:
+                  results = run_query(results_query)                   
+                  checkresults = results.empty
+                  if checkresults==True:
+                     with st.spinner('Result processing in progress...'):
+                        time.sleep(1)
+                     continue                  
+                  st.success('Your results are ready.')
+                  st.write(results)
+                  break                
                   
             else:
                  st.write("An error has occured.  Here are some details: "+df_request)               
