@@ -117,24 +117,14 @@ if persona == 'Consumer Request':
                   break                   
 
               #Error Handling
-
-                
-               while True:
                 try:
                     error_check = run_query(results_query)
                 except RuntimeError as e:
                      stre = str(e)
                      st.error("Please check your where clause for allowed values and structure."+stre)
-                     st.stop()                
-                results = run_query(results_query)                   
-                checkresults = results.empty
-                if checkresults==True:
-                     with st.spinner('Result processing in progress...'):
-                        time.sleep(1)
-                     continue                  
-                st.success('Your results are ready.')
-                st.write(results)
-                break
+                     st.stop()         
+                
+
 
 #                while True:
 #                   results = run_query(results_query)                   
