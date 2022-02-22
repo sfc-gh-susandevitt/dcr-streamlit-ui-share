@@ -5,7 +5,7 @@
 ### OSX ###
 
 # Project specific
-streamlit_prophet/config/custom_*
+#streamlit_prophet/config/custom_*
 *.zip
 app.yaml
 
