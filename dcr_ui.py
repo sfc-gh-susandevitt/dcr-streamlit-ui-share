@@ -118,7 +118,7 @@ if persona == 'Consumer Request':
                    st.write(e)
                    st.error("Please check your where clause for allowed values and structure."+stre)
                finally:
-                   cur.close()       
+                   st.write("OK")     
                 
 
 
