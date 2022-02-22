@@ -126,14 +126,14 @@ if persona == 'Consumer Request':
                      st.error("Please check your where clause for allowed values and structure.")
                      st.stop()                
                 results = run_query(results_query)                   
-                  checkresults = results.empty
-                  if checkresults==True:
+                checkresults = results.empty
+                if checkresults==True:
                      with st.spinner('Result processing in progress...'):
                         time.sleep(1)
                      continue                  
-                  st.success('Your results are ready.')
-                  st.write(results)
-                  break
+                st.success('Your results are ready.')
+                st.write(results)
+                break
 
 #                while True:
 #                   results = run_query(results_query)                   
