@@ -122,7 +122,7 @@ if persona == 'Consumer Request':
                except snowflake.connector.errors.ProgrammingError as e:
                      st.write(e)
                      st.error("Please check your where clause for allowed values and structure."+stre)
-                finally:
+               finally:
                     cur.close()       
                 
 
