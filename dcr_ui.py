@@ -114,20 +114,11 @@ if persona == 'Consumer Request':
                      continue
                   st.success('Your request has been approved and is being processed.')
                   results_query = df_results['QUERYTEXT'].head(1).item()
-                  break                   
-
-               #Error Check
                   errorcheck = run_query("select system$explain_plan_json("+results_query+");")                   
                   checkresults = errorcheck
                   st.write(checkresults)
-                  #if checkresults==True:
-                     #with st.spinner('Result processing in progress...'):
-                        #time.sleep(1)
-                     #continue                  
-                  #st.success('Your results are ready.')
-                  #st.write(results)
-                  #break
-                                
+                  break                   
+
                 
                while True:
                   results = run_query(results_query)                   
