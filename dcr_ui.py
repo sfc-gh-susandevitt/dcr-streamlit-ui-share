@@ -117,14 +117,15 @@ if persona == 'Consumer Request':
                   break                   
 
               #Error Handling
-               try:
-                    error_check = run_query(results_query)
-               except ValueError:
-                     st.error("Please check your where clause for allowed values and structure.")
-                     st.stop()
+
                 
                while True:
-                  results = run_query(results_query)                   
+                try:
+                    error_check = run_query(results_query)
+                except ValueError:
+                     st.error("Please check your where clause for allowed values and structure.")
+                     st.stop()                
+                results = run_query(results_query)                   
                   checkresults = results.empty
                   if checkresults==True:
                      with st.spinner('Result processing in progress...'):
@@ -133,6 +134,17 @@ if persona == 'Consumer Request':
                   st.success('Your results are ready.')
                   st.write(results)
                   break
+
+#                while True:
+#                   results = run_query(results_query)                   
+#                   checkresults = results.empty
+#                   if checkresults==True:
+#                      with st.spinner('Result processing in progress...'):
+#                         time.sleep(1)
+#                      continue                  
+#                   st.success('Your results are ready.')
+#                   st.write(results)
+#                   break                
                   
             else:
                  st.write("An error has occured.  Here are some details: "+df_request)               
