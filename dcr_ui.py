@@ -117,9 +117,9 @@ if persona == 'Consumer Request':
                   break                   
 
               #Error Handling
-                try:
+               try:
                     error_check = run_query(results_query)
-                except RuntimeError as e:
+               except RuntimeError as e:
                      stre = str(e)
                      st.error("Please check your where clause for allowed values and structure."+stre)
                      st.stop()         
