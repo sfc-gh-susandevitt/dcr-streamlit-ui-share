@@ -12,4 +12,4 @@ streamlit >= 1.5.0
 #scipy >= 1.6.3
 #altair >= 4.1.0
 snowflake-connector-python >= 2.7.1
-#pyarrow <6.1.0,>=6.0.0
+pyarrow <6.1.0,>=6.0.0
