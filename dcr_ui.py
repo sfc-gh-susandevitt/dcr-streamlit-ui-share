@@ -114,15 +114,15 @@ if persona == 'Consumer Request':
                      continue
                   st.success('Your request has been approved and is being processed.')
                   results_query = df_results['QUERYTEXT'].head(1).item()
-                  break                   
-
-                
-               while True:
                   try:
                     error_check = run_query(results_query)
                   except ValueError:
                      st.error("Please check your where clause for allowed values and structure.")
                      st.stop()
+                  break                   
+
+                
+               while True:
                   results = run_query(results_query)                   
                   checkresults = results.empty
                   if checkresults==True:
