@@ -129,7 +129,7 @@ if persona == 'Consumer Request':
                   #break
                                 
                 
-                while True:
+               while True:
                   results = run_query(results_query)                   
                   checkresults = results.empty
                   if checkresults==True:
