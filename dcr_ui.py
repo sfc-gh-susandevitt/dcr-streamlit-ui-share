@@ -29,7 +29,7 @@ def load_image(image_name: str) -> Image:
 
 # Sidebar
 sideb = st.sidebar
-sideb.image(load_image("DCRLogoGray.png"),use_column_width=True)
+sideb.image(load_image("DCR_MP_GBO.png"),use_column_width=True)
 
 # Potential Login Process
 # sideb.header ("Account Login")
