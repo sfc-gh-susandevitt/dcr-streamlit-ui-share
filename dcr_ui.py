@@ -115,7 +115,8 @@ if persona == 'Consumer Request':
                try:
                    run_query(results_query)
                except snowflake.connector.errors.ProgrammingError as e:
-                   st.error('Your request has an error.  Please check the the syntax of your where clause.  Error {0} ({1}): {2} ({3})'.format(e.errno, e.sqlstate, e.msg, e.sfqid))
+                   #st.error('Your request has an error.  Please check the the syntax of your where clause.  Error {0} ({1}): {2} ({3})'.format(e.errno, e.sqlstate, e.msg, e.sfqid))
+                   st.error('Your request has an error.  Please check the the syntax of your where clause.  Details: '.format(e.sfqid)) 
                    st.stop()
                 
                while True:
