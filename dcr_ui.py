@@ -118,6 +118,10 @@ if persona == 'Consumer Request':
 
                 
                while True:
+                  try:
+                    error_check = run_query(results_query)
+                  except ValueError:
+                     st.error(‘Please check your where clause for allowed values and structure.’)
                   results = run_query(results_query)                   
                   checkresults = results.empty
                   if checkresults==True:
