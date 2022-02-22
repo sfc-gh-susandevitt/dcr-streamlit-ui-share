@@ -119,10 +119,11 @@ if persona == 'Consumer Request':
               #Error Handling
                try:
                     error_check = run_query(results_query)
-               except RuntimeError as e:
-                     stre = str(e)
+               except snowflake.connector.errors.ProgrammingError as e:
+                     st.write(e)
                      st.error("Please check your where clause for allowed values and structure."+stre)
-                     st.stop()         
+                finally:
+                    cur.close()       
                 
 
 
