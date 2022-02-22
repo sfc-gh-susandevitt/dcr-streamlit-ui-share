@@ -31,11 +31,6 @@ def load_image(image_name: str) -> Image:
 sideb = st.sidebar
 sideb.image(load_image("DCR_MP_GBO.png"),use_column_width=True)
 
-# Potential Login Process
-# sideb.header ("Account Login")
-# sideb.text_input('Snowflake Account', value="", max_chars=None, key=None, type="default", help=None, autocomplete=None, on_change=None, placeholder=None)
-# sideb.text_input('User Name', value="", max_chars=None, key=None, type="default", help=None, autocomplete=None, on_change=None, placeholder=None)
-# sideb.text_input('Password', value="", max_chars=None, key=None, type="password", help=None, autocomplete=None, on_change=None, placeholder=None)
 
 # Consumer Database Prefix
 sideb.header ("Consumer Database Connection")
