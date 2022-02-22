@@ -106,8 +106,7 @@ if persona == 'Consumer Request':
              
                while True:
                   # find the new request_id and use that here
-#                 df_results = run_query("select request:PROPOSED_QUERY::varchar as querytext from dcr_"+prefix+"_app.cleanroom.provider_log where request_id = '"+requestid+"';")
-                  df_results = run_query("select request:PROPOSED_QUERY::variant as querytext from dcr_"+prefix+"_app.cleanroom.provider_log where request_id = '"+requestid+"';")
+                  df_results = run_query("select request:PROPOSED_QUERY::varchar as querytext from dcr_"+prefix+"_app.cleanroom.provider_log where request_id = '"+requestid+"';")
                   checkstatus = df_results.empty                  
                   if checkstatus==True:
                      with st.spinner('Request approval in progress...'):
@@ -115,9 +114,6 @@ if persona == 'Consumer Request':
                      continue
                   st.success('Your request has been approved and is being processed.')
                   results_query = df_results['QUERYTEXT'].head(1).item()
-                  errorcheck = run_query("select system$explain_plan_json("+results_query+");")                   
-                  checkresults = errorcheck
-                  st.write(checkresults)
                   break                   
 
                 
