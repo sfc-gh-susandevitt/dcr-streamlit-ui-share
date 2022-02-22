@@ -112,6 +112,7 @@ if persona == 'Consumer Request':
                   break                   
 
               #Error Handling
+               cur = con.cursor()
                try:
                    cur.execute(results_query)
                except snowflake.connector.errors.ProgrammingError as e:
