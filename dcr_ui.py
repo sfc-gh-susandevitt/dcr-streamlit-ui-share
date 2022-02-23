@@ -4,9 +4,6 @@ from pathlib import Path
 
 import streamlit as st
 import snowflake.connector
-#import plotly.figure_factory as ff
-#import numpy as np
-#import altair as alt
 import time as time
 import pandas as pd
 import requests
