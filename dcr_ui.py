@@ -4,9 +4,6 @@ from pathlib import Path
 
 import streamlit as st
 import snowflake.connector
-#import plotly.figure_factory as ff
-#import numpy as np
-#import altair as alt
 import time as time
 import pandas as pd
 import requests
@@ -69,7 +66,7 @@ if persona == 'Consumer Request':
       # Load Dimensions into frame
       # To Do: replace available values query with jinja template scope
       if options_template:
-         df_dimensions = run_query("select concat($$'$$,table1.value,$$'$$) from (select template_name, case when template_name = 'campaign_conversion' then 'c.pets|c.zip|p.status|p.age_band|c_conv.product|p_exp.campaign|p_exp.device_type'else 'c.pets|c.zip|p.status|p.age_band'end as dimensions from DCR_"+prefix+"_APP.CLEANROOM.TEMPLATES),table(split_to_table(dimensions,'|')) as table1 where template_name = lower('"+options_template+"') order by value;")
+         df_dimensions = run_query("select concat($$'$$,table1.value,$$'$$) from (select template_name, dimensions from DCR_"+prefix+"_APP.CLEANROOM.TEMPLATES),table(split_to_table(dimensions,'|')) as table1 where template_name = lower('"+options_template+"') order by value;")
          options_dimensions = st.multiselect('Select dimensions', df_dimensions)
          dimension_array = ",".join(options_dimensions)         
 
